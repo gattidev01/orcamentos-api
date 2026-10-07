@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: orcamentos-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/orcamentos}
+    username: ${DB_USER:orcamentos}
+    password: ${DB_PASSWORD:orcamentos}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+server:
+  error:
+    include-message: never
+
+app:
+  jwt:
+    issuer: orcamentos-api
+    expiration: 1h
+    secret: ${JWT_SECRET:bXVkZS1lc3RlLXNlZ3JlZG8tZW0tcHJvZHVjYW8tMTIzNDU2}
